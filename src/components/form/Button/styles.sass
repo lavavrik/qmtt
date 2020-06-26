@@ -1,0 +1,41 @@
+@import '../common.sass'
+
+@mixin buttonColor($color)
+  background-color: $color
+
+  &:hover
+    background-color: darken($color, 5%)
+
+  &:active
+    background-color: darken($color, 10%)
+
+.button
+  @include commonFormElement
+  padding-top: 0
+  padding-bottom: 0
+  cursor: pointer
+  border: none
+  transition: background-color $transitionTime
+
+  &, & > .icon
+    color: #ffffff
+
+  .icon
+    margin-right: 8px
+    font-size: 14px
+
+  &.colorprimary
+    @include buttonColor($blue)
+  
+  &.colorsecondary
+    @include buttonColor($gray)
+
+  &.sizem
+    height: $height
+    padding-left: 14px
+    padding-right: 14px
+
+  &.sizel
+    height: $heightLarge
+    padding-left: 22px
+    padding-right: 22px

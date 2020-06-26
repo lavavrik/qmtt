@@ -1,0 +1,26 @@
+@import '../../variables.sass'
+
+@mixin placeholder
+  &::-webkit-input-placeholder
+    @content;
+
+  &:-moz-placeholder /* Firefox 18- */
+    @content;
+
+  &::-moz-placeholder  /* Firefox 19+ */
+    @content;
+
+  &:-ms-input-placeholder
+    @content;
+
+$height: 25px
+$heightLarge: 32px
+$transitionTime: .2s
+
+@mixin commonFormElement
+  height: $height
+  box-sizing: border-box
+  border-radius: 4px
+  outline: none
+  font-size: 12px
+  -webkit-appearance: none
