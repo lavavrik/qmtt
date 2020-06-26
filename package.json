@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --env.NODE_ENV=development -w",
-    "build": "webpack --env.NODE_ENV=production --progress"
+    "serve-production": "webpack --env.NODE_ENV=production --progress; serve dist"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +26,7 @@
     "node-sass": "^4.14.1",
     "sass": "^1.26.9",
     "sass-loader": "^8.0.2",
+    "serve": "^11.3.2",
     "style-loader": "^1.2.1",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.5",

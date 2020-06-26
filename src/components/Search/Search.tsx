@@ -18,6 +18,9 @@ export default function Search() {
   const [criterias, setCriterias] = useState<CriteriaDTO[]>([defaultCriteriaViewModel]);
 
   const [sqlQuery, setSQLQuery] = useState('');
+  const resetSQLQuery = () => {
+    setSQLQuery('');
+  };
 
   const updateCriteria = (i: number, criteriaViewModel: CriteriaDTO) => {
     const originalCriteria = criterias[i];
@@ -47,6 +50,7 @@ export default function Search() {
 
   const resetCriterias = () => {
     setCriterias([defaultCriteriaViewModel]);
+    resetSQLQuery();
   };
 
   const removeCriteria = (i: number) => {
@@ -64,7 +68,7 @@ export default function Search() {
     if (acceptableCriterias.length > 0) {
       setSQLQuery(transformCriteriasDTOToSQLStatement(acceptableCriterias));
     } else {
-      setSQLQuery('');
+      resetSQLQuery();
     }
   };
 
